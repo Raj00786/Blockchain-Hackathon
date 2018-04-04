@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="hackathon">
+<head>
+	<title>ILEDGER</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
+     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="/node_modules/angular-material-data-table/dist/md-data-table.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/preloader.css">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/scrolling-nav.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="loader">
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+    <span class="loader-block"></span>
+  </div>
+</div>
+
+
+<nav ng-controller="navCtrl as nav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-cloak>
+  <div style="color: white" class="container">
+    <div class="navbar-header">
+      <md-button style="position: absolute;right: 25px;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <i class="material-icons">&#xE8FE;</i>
+      </md-button>
+      <a href="/" class="navbar-brand js-scroll-trigger" style="font-weight: bold;font-size: 1.5em;">ILEDGER</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><md-tooltip md-visible="false">Check your profile page</md-tooltip>
+<md-button ng-if="nav.logged" layout="row" type="submit" class="md-raised md-primary" ng-click="profile($event)"><i class="material-icons">&#xE853;</i>{{nav.email}}</md-button></li>
+        <li><md-button ng-if="nav.logged" layout="row" type="submit" class="md-raised md-primary" ng-click="nav.logout()"><i class="material-icons">&#xE8AC;</i> Log Out</md-button></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+    
+  <script type="text/ng-template" id="profile.html" ng-cloak>
+    <md-dialog ng-controller="profileCtrl as p" flex-xs="100" flex-sm="100" flex-gt-sm="50" flex-gt-md="50" aria-label="Mango (Fruit)">
+      <md-card style="overflow: auto;">
+        <table md-table  md-progress="promise">
+          <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+            <tr md-row>
+              <th md-column ><span>Team Name</span></th>
+              <th md-column >{{p.profile.teamName}}</th>
+              <th md-column >{{p.email}}</th>
+            </tr>
+          </thead>
+          <tbody md-body>
+              <tr  md-row md-select="dessert" md-select-id="name" md-auto-select >
+                <td md-cell><span>Email</span></td>
+                <td md-cell>{{p.profile.email}}</td>
+              </tr>
+              
+              <tr  md-row md-select="dessert" md-select-id="name" md-auto-select >
+                <td md-cell><span>Team Members</span></td>
+                <td md-cell>{{p.profile.teamMember}}</td>
+              </tr>
+
+              <tr  md-row md-select="dessert" md-select-id="name" md-auto-select >
+                <td md-cell><span>Form Submitted</span></td>
+                <td md-cell>{{p.profile.submitted}}</td>
+              </tr>
+
+              <tr md-row md-select="dessert" md-select-id="name" md-auto-select >
+                <td md-cell rowspan="4"><span>Members Details</span></td>
+                <td md-cell>
+                  <table md-table  md-progress="promise">
+                      <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+                        <tr md-row>
+                          <th md-column ><span>First Name</span></th>
+                          <th md-column ><span>last Name</span></th>
+                          <th md-column ><span>Mobile Number</span></th>
+                        </tr>
+                      </thead>
+                      <tbody md-body ng-repeat="member in p.profile.member">
+                          <tr  md-row md-select="dessert" md-select-id="name" md-auto-select >
+                            <td md-cell>{{member.firstname}}</td>
+                            <td md-cell>{{member.lastname}}</td>
+                            <td md-cell>{{member.mobileno}}</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+
+      </md-card>
+      <md-dialog-actions layout="row">
+        <md-button ng-click="answer('ok')" style="margin-right:20px;" >
+          Ok
+        </md-button>
+      </md-dialog-actions>
+    </md-dialog>
+  </script>
+
+</nav>
+
+
+<div style="position: relative;top: 62px" ng-controller="fullCtrl as main">
+	<ng-view></ng-view>   
+</div>
+
+
+
+<script src="/node_modules/angular/angular.js"></script>
+<script src="/node_modules/angular-resource/angular-resource.js"></script>
+<script src="/node_modules/angular-aria/angular-aria.js"></script>
+<script src="/node_modules/angular-animate/angular-animate.js"></script>
+<script src="/node_modules/angular-material/angular-material.js"></script>
+<script src="/node_modules/angular-route/angular-route.js"></script>
+<script src="/node_modules/angular-messages/angular-messages.js"></script>
+<script src="/node_modules/angular-material-icons/angular-material-icons.min.js"></script>
+<script type="text/javascript" src="/node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="/node_modules/angular-sanitize/angular-sanitize.js"></script>
+
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="assets/js/scrolling-nav.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/controller/mainctrl.js"></script>
+<script type="text/javascript" src="app/controller/mainservice.js"></script>
+<script type="text/javascript">
+	$(function(){
+		console.log = function(){};
+	});
+  document.onreadystatechange = function () {
+    var state = document.readyState
+      if (state == 'complete') {
+        $("#preloader").fadeOut(500);
+      }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+<md-content  layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span>Hackathon Form</span></h2>
+      </div>
+    </md-toolbar>
+    <md-card-content>
+      <form name="Form" ng-submit="userform.submit()">
+<!--         <md-input-container class="md-block">
+          <label>Name of team</label>
+          <input type="text" name="teamName" ng-model="userform.user.teamName" required=""/>
+        </md-input-container>
+        
+        <md-input-container class="md-block">
+        <label>Number of members in team</label>
+        <md-select ng-change="check()" ng-model="userform.user.teamMember" name="teamMember" required>
+          <md-option value="1">1</md-option>
+          <md-option value="2">2</md-option>
+          <md-option selected value="3">3</md-option>
+          <md-option value="4">4</md-option>
+          <md-option value="5">5</md-option>
+        </md-select>
+        </md-input-container>
+
+        <div id="mem">
+          
+        </div>
+ -->
+        <md-input-container class="md-block">
+            <p>1. Problem Statement, please describe what problem are you targeting to solve</p>
+            <textarea ng-model="userform.user.describe" name="describe" md-maxlength="500" rows="5" md-select-on-focus required></textarea>
+        </md-input-container>
+
+
+        <md-input-container class="md-block">
+            <label>How does the DAPP solve this?</label>
+            <textarea ng-model="userform.user.dapp" name="dapp" md-maxlength="500" rows="5" md-select-on-focus required></textarea>
+        </md-input-container>
+
+
+        <md-input-container class="md-block">
+            <label>Can we solve it with databases ?</label>
+            <textarea ng-model="userform.user.databases" name="databases" md-maxlength="500" rows="5" md-select-on-focus required></textarea>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>If yes, benefits of using blockchain vs database.</label>
+            <textarea ng-model="userform.user.benefits" name="benefits" md-maxlength="500" rows="5" md-select-on-focus required></textarea>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Does it slows down the application compared to databases?</label>
+            <textarea ng-model="userform.user.application" name="application" md-maxlength="500" rows="5" md-select-on-focus required></textarea>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Describe the most challenging part of your project implementation</label>
+            <textarea ng-model="userform.user.challenge" name="challenge" md-maxlength="500" rows="5" md-select-on-focus required></textarea>
+        </md-input-container>
+
+       <md-input-container class="md-block">
+            <label>You tube link of the demo of the project</label>
+            <input type="text" ng-model="userform.user.youtubeLink" name="youtube" name="youtubeLink" required=""/>
+        </md-input-container>
+
+        <md-button type="submit" ng-disabled="!Form.$valid || userform.submitted" class="md-raised md-primary">&nbsp Submit &nbsp</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+</md-content> 
+

@@ -1,0 +1,79 @@
+<div  layout-align="center center" layout="row">
+  <div id="data_top" layout-align="center center" layout="row" layout-xs="column" layout-sm="column" style="display: -webkit-inline-box;">
+    <md-button  layout="row" class="md-raised md-primary"><i class="material-icons">&#xE853;</i>Registered Users : {{regUser}}</md-button>
+    <md-button layout="row" class="md-raised md-primary"><i class="material-icons">&#xE853;</i>Users Submitted Form : {{subUser}}</md-button>  
+  </div>  
+</div>
+
+
+
+<md-table-container>
+  <table md-table  multiple  md-progress="promise">
+    <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <tr md-row>
+        <th md-column><span>S.No.</span></th>
+        <th md-column><span>Email</span></th>
+        <th md-column ><span>Team Name</span></th>
+        <th md-column><span>Team Members</span></th>
+        <th md-column><span>Problem Statement, please describe what problem are you targeting to solve</span></th>
+        <th md-column><span>How does the DAPP solve this?</span></th>
+        <th md-column><span>Can we solve it with databases?</span></th>
+        <th md-column><span>If yes, benefits of using blockchain vs database.</span></th>
+        <th md-column><span>Does it slows down the application compared to databases?</span></th>
+        <th md-column><span>Describe the most challenging part of your project implementation</span></th>
+        <th md-column><span>You tube link of the demo of the project</span></th>
+        <th md-column><span>FirstName</span></th>
+        <th md-column><span>LastName</span></th>
+        <th md-column ><span>MobileNo</span></th>
+      </tr>
+    </thead>
+    <tbody md-body ng-repeat="item in names">
+      <tr ng-repeat="(key, val) in item" >
+        <tr md-row md-select="dessert" md-select-id="name" md-auto-select >
+          <td md-cell rowspan="{{item.teamMember}}">{{$index + 1}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.email}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.teamName}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.teamMember}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.describe}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.dapp}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.databases}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.benefits}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.application}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.challenge}}</td>
+          <td md-cell rowspan="{{item.teamMember}}">{{item.youtubeLink}}</td>
+          <td md-cell>{{item.member[0].firstname}}</td>
+          <td md-cell>{{item.member[0].lastname}}</td>
+          <td md-cell>{{item.member[0].mobileno}}</td>
+        </tr>
+        <tr ng-if="item.teamMember>1" md-row md-select="dessert" md-select-id="name" md-auto-select >
+          <td md-cell>{{item.member[1].firstname}}</td>
+          <td md-cell>{{item.member[1].lastname}}</td>
+          <td md-cell>{{item.member[1].mobileno}}</td>
+        </tr>
+        <tr ng-if="item.teamMember>2" md-row md-select="dessert" md-select-id="name" md-auto-select >
+          <td md-cell>{{item.member[2].firstname}}</td>
+          <td md-cell>{{item.member[2].lastname}}</td>
+          <td md-cell>{{item.member[2].mobileno}}</td>
+        </tr>
+        <tr ng-if="item.teamMember>3" md-row md-select="dessert" md-select-id="name" md-auto-select >
+          <td md-cell>{{item.member[3].firstname}}</td>
+          <td md-cell>{{item.member[3].lastname}}</td>
+          <td md-cell>{{item.member[3].mobileno}}</td>
+        </tr>
+        <tr ng-if="item.teamMember>4" md-row md-select="dessert" md-select-id="name" md-auto-select >
+          <td md-cell>{{item.member[4].firstname}}</td>
+          <td md-cell>{{item.member[4].lastname}}</td>
+          <td md-cell>{{item.member[4].mobileno}}</td>
+        </tr>
+        <tr ng-if="item.teamMember==5" md-row md-select="dessert" md-select-id="name" md-auto-select >
+          <td md-cell>{{item.member[5].firstname}}</td>
+          <td md-cell>{{item.member[5].lastname}}</td>
+          <td md-cell>{{item.member[5].mobileno}}</td>
+        </tr>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+
+{{data.names}}

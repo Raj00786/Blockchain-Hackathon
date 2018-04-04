@@ -1,0 +1,211 @@
+<!-- <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+  <md-card flex="flex" flex-gt-sm="70" flex-md="80" flex-gt-md="80">
+    <div ng-cloak>
+ -->      
+ <md-card style="margin: auto;" flex="flex" flex-gt-sm="70" flex-md="80" flex-gt-md="80">
+        <md-tabs md-dynamic-height md-stretch-tabs="auto" md-dynamic-height md-border-bottom>
+          <md-tab label="General Guidelines">
+            <md-content class="md-padding">
+                  <md-list-item layout="column">
+                    <span class="info_point"><i class="material-icons">&#xE877;</i>The hackathon will not be restricted to any particular domain of application.</span>
+                    <span class="info_point"><i class="material-icons">&#xE877;</i>Any application or solution using blockchains are welcome.</span>
+                    <span class="info_point"><i class="material-icons">&#xE877;</i>Some suggested areas could be : health care, finTech, modelling business network, identity management, voting etc.<br>
+                    (This list by no means is exhaustive or shows our interest or inclination. These are just to outline some of the areas where problems are being addressed and solved using blockchain)
+                    </span>
+                    <span class="info_point"><i class="material-icons">&#xE877;</i>We would recommend using Ethereum, multichain or Hyperledger Fabric (based upon your requirement for public vs private blockchain). However, are free to use any blockchain of your choice. </span>
+                  </md-list-item>
+            </md-content>
+          </md-tab>
+          <md-tab label="Submission Details and Deliverables">
+            <md-content layout="column" class="md-padding">
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>3 minutes youtube video of the screen capture with background commentary demonstrating their Dapp</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>They will fill a form explaining the technology/solution in written</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>Once the solutions are reviewed 5 teams selected for final interview to confirm the design and implementation in an online session.</span>
+            </md-content>
+          </md-tab>
+          <md-tab label="Rules of hackathon">
+            <md-content layout="column" class="md-padding">
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>A team should not have more than 5 members</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>Prizes are per team not individuals</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i> Hackathon work can be done offsite and only final result to be submitted</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>Please be prepared to show technical details, and code used</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>IIT CSE department will conduct a block chain seminar prior to the hackathon please plan on attending.</span>
+                  <span class="info_point"><i class="material-icons">&#xE877;</i>Last day to submit your solution April 8rth 2018 11:30pm IST</span>
+            </md-content>
+          </md-tab>
+
+          <md-tab label="Judging Criteria">
+            <md-content class="md-padding">
+                  <md-table-container>
+                    <table md-table multiple md-progress="promise">
+                      <thead md-head md-on-reorder="getDesserts">
+                        <tr md-row>
+                          <th md-column>Topic</th>
+                          <th md-column>Weightage</th>
+                        </tr>
+                      </thead>
+                      <tbody md-body>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>Problem statement</td>
+                          <td md-cell>10%</td>
+                        </tr>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>Design (visual and interface)</td>
+                          <td md-cell>20%</td>
+                        </tr>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>Degree of Completion and Solution (Technical details)</td>
+                          <td md-cell>50%</td>
+                        </tr>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>Demo</td>
+                          <td md-cell>20%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </md-table-container>
+            </md-content>
+          </md-tab>
+
+          <md-tab label="Prizes for students">
+            <md-content class="md-padding">
+                  <md-table-container>
+                    <table md-table multiple md-progress="promise">
+                      <thead md-head md-on-reorder="getDesserts">
+                        <tr md-row>
+                          <th md-column>Position</th>
+                          <th md-column>Prize</th>
+                        </tr>
+                      </thead>
+                      <tbody md-body>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>First prize</td>
+                          <td md-cell>USD 400</td>
+                        </tr>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>Second prize </td>
+                          <td md-cell>USD 200</td>
+                        </tr>
+                        <tr md-row md-select-id="name" md-auto-select>
+                          <td md-cell>Third prize</td>
+                          <td md-cell>USD 100</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </md-table-container>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-card>
+
+<!--     </div>
+  </md-card>
+</md-content>
+ -->
+
+
+<md-content ng-show="!registerForm" layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+  <md-card flex="flex" flex-gt-sm="70" flex-md="80" flex-gt-md="80">
+      <span layout="row"><i style="color: red" class="material-icons">info</i> <strong  style="color: red" >Login</strong>&nbsp If you are registerd then please login using password sent to your email id</span>
+  </md-card>
+</md-content>
+
+<md-content ng-show="registerForm" layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+  <md-card flex="flex" flex-gt-sm="70" flex-md="80" flex-gt-md="80">
+      <span layout="row"><i  style="color: red"  class="material-icons">info</i>  <strong  style="color: red" >Registration</strong> &nbsp Your password will be sent to your registerd email id.Use that password to login</span>
+  </md-card>
+</md-content>
+
+
+<div layout="row" flex-xs="100" flex-sm="100" flex="70" flex-md="80" style="margin: auto;" flex="flex" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+          <md-content ng-show="!registerForm" flex="flex" flex-xs="100" flex-gt-sm="80" flex-gt-md="50">
+                <md-card >
+                  <md-toolbar>
+                    <div class="md-toolbar-tools">
+                      <h2><span>Login Form</span></h2>
+                    </div>
+                  </md-toolbar>
+                  <md-card-content>
+                    <form name="Form" ng-submit="login.submit(login.user)">
+                      <md-input-container class="md-block">
+                        <label>Email id</label>
+                        <input type="email" name="email" ng-model="login.user.email" required=""/>
+                      </md-input-container>
+                      <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input type="password" name="password" ng-model="login.user.password" required/>
+                      </md-input-container>
+                      <md-button ng-disabled="!Form.$valid || login.submitted" type="submit" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
+                      <span> not registerd ? <a ng-click="registerForm = !registerForm" class="md-raised">register here</a></span>
+                    </form>
+                  </md-card-content>
+                </md-card>
+
+                <div flex="flex" >
+                  <div class="mess jumbotron text-center" ng-show='login.loading'>
+                      <md-button class="md-primary" layout="row"><md-progress-circular  class="md-accent" md-diameter="20"></md-progress-circular>&nbsp &nbspConnecting to database.......</md-button>
+                  </div>
+                  <div class="mess row show-hide-message" ng-show='login.successMsg'>
+                    <md-button class="md-primary">{{login.successMsg}}</md-button>
+                  </div>
+                  <div class="mess row show-hide-message" ng-show='login.errorMsg'>
+                      <md-button class="md-warn">{{login.errorMsg}}</md-button>
+                  </div>
+                </div>
+            </md-content> 
+
+ 
+          <md-content ng-show="registerForm" flex="flex" flex-xs="100"  flex-gt-sm="80" flex-gt-md="50">
+            <md-card >
+              <md-toolbar>
+                <div class="md-toolbar-tools">
+                  <h2><span>Registration Form</span></h2>
+                </div>
+              </md-toolbar>
+              <md-card-content>
+                <form name="regForm" ng-submit="login.register(login.reg)">
+                  <md-input-container class="md-block">
+                    <label>Name of team</label>
+                    <input type="text" name="teamName" ng-model="login.reg.teamName" required=""/>
+                  </md-input-container>
+
+                  <md-input-container class="md-block">
+                    <label>Email id</label>
+                    <input type="email" name="email" ng-model="login.reg.email" required=""/>
+                  </md-input-container>
+
+
+                    <md-input-container class="md-block">
+                    <label>Number of members in team</label>
+                    <md-select ng-change="login.change()" ng-model="login.reg.teamMember" name="teamMember" required>
+                      <md-option value="1">1</md-option>
+                      <md-option value="2">2</md-option>
+                      <md-option value="3">3</md-option>
+                      <md-option value="4">4</md-option>
+                      <md-option value="5">5</md-option>
+                    </md-select>
+                    </md-input-container>
+                  <div id="mem">
+                  
+                  </div>
+                  <p><span style="color: red">*</span>First user will be leader</p>
+                  <md-button type="submit" ng-disabled="!regForm.$valid" class="md-raised md-primary">&nbsp Register &nbsp</md-button>
+                  <span> Already registerd? <a ng-click="registerForm = !registerForm" class="md-raised">Login here</a></span>
+                </form>
+              </md-card-content>
+            </md-card>
+
+              <div flex="flex" >
+                  <div class="mess jumbotron text-center" ng-show='login.loading'>
+                      <md-button class="md-primary" layout="row"><md-progress-circular  class="md-accent" md-diameter="20"></md-progress-circular>&nbsp &nbspConnecting to database.......</md-button>
+                  </div>
+                  <div class="mess row show-hide-message" ng-show='login.successMsg'>
+                    <md-button class="md-primary">{{login.successMsg}}</md-button>
+                  </div>
+                  <div class="mess row show-hide-message" ng-show='login.errorMsg'>
+                      <md-button class="md-warn">{{login.errorMsg}}</md-button>
+                  </div>
+                </div>
+          </md-content> 
+
+</div>
